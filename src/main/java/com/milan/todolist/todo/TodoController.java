@@ -13,14 +13,14 @@ public class TodoController {
     @Autowired
     private TodoRepository repo;
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://to-do-list-front-end-three.vercel.app/")
     @GetMapping("/getAllTask")
     public List<Todo> getAllTasks() {
         List<Todo> res = repo.findAll();
         return res;
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://to-do-list-front-end-three.vercel.app/")
     @GetMapping("/getOneTask/{id}")
     public Todo getTaskById(@PathVariable Long id) {
         Optional<Todo> tsk = repo.findById(id);
@@ -31,7 +31,7 @@ public class TodoController {
         }
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://to-do-list-front-end-three.vercel.app/")
     @RequestMapping(method = RequestMethod.POST, path = "/createTask")
     public Todo addTask(@RequestBody Map<String, String> body) {
         Todo task = new Todo();
@@ -44,7 +44,7 @@ public class TodoController {
         return task;
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://to-do-list-front-end-three.vercel.app/")
     @Transactional
     @PutMapping("/updateTask/{id}")
     public Todo updateTask(@PathVariable Long id, @RequestBody Map<String, String> body) {
@@ -80,7 +80,7 @@ public class TodoController {
         return task;
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://to-do-list-front-end-three.vercel.app/")
     @DeleteMapping("/deleteTask/{id}")
     public void deleteTask(@PathVariable Long id) {
         boolean b = repo.existsById(id);
