@@ -1,4 +1,6 @@
 spring.datasource.url: jdbc:postgres://milangupta95:6jgMMMDYD55UpdcXvX0xuqepHBfUSkFN@dpg-cjb6kn1itvpc73f8frig-a/todo_aydw
 spring.datasource.username: milangupta95
 spring.datasource.password: 6jgMMMDYD55UpdcXvX0xuqepHBfUSkFN
-
+spring.jpa.show-sql: true
+spring.jpa.properties.hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
+spring.jpa.properties.hibernate.format_sql: true
